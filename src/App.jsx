@@ -1,8 +1,8 @@
 import { useState } from "react"
-import GameBoard from "./GameBoard"
-import Player from "./Player"
-import Log from "./Log";
-import GameOver from "./GameOver";
+import GameBoard from "./components/GameBoard"
+import Player from "./components/Player"
+import Log from "./components/Log";
+import GameOver from "./components/GameOver";
 import { WINNING_COMBINATIONS } from "./WinningCombinations";
 
 const PLAYERS = {
@@ -80,8 +80,8 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player name={PLAYERS.X} symbol="X" isActive = {activePlayer==='X'} onNameChange = {handlePlayerName}/>
-          <Player name={PLAYERS.O} symbol="O" isActive = {activePlayer==='O'} onNameChange = {handlePlayerName}/>
+          <Player initName={PLAYERS.X} symbol="X" isActive = {activePlayer==='X'} onNameChange = {handlePlayerName}/>
+          <Player initName={PLAYERS.O} symbol="O" isActive = {activePlayer==='O'} onNameChange = {handlePlayerName}/>
         </ol>
         {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart}/>}
         <GameBoard  onSelectHandle = {handleActivePlayer} board = {board} />
