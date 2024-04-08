@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function Player({name, symbol, isActive,onNameChange}) {
-    const [playerName , setPlayerName] = useState(name);
+export default function Player({initName, symbol, isActive,onNameChange}) {
+    const [playerName , setPlayerName] = useState(initName);
     const [edit,  setEdit] = useState(false);
 
     function handleEdit() {
